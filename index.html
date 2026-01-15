@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Haris Darmawan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-950 text-white overflow-x-hidden">
+    <div id="menu-overlay" class="menu-overlay"></div>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-500">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center p-2">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center neon-shadow">
+                        <span class="text-white font-bold">P</span>
+                    </div>
+                    <span
+                        class="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Portfolio</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#home" class="text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="lang-id">Beranda</span>
+                        <span class="lang-en hidden">Home</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="lang-id">Tentang</span>
+                        <span class="lang-en hidden">About</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="lang-id">Keahlian</span>
+                        <span class="lang-en hidden">Skills</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#certificates"
+                        class="text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="lang-id">Sertifikat</span>
+                        <span class="lang-en hidden">Certificates</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#projects"
+                        class="text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="lang-id">Proyek</span>
+                        <span class="lang-en hidden">Projects</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+
+                    <!-- Language Selector -->
+                    <div class="flex items-center space-x-2 ml-4">
+                        <button id="lang-id"
+                            class="language-selector active flex items-center space-x-1 px-3 py-1.5 rounded-lg glass-effect hover:bg-white/5 transition-all">
+                            <img src="https://flagcdn.com/w20/id.png" alt="Indonesia" class="w-5 h-4">
+                            <span class="font-medium">ID</span>
+                        </button>
+                        <button id="lang-en"
+                            class="language-selector flex items-center space-x-1 px-3 py-1.5 rounded-lg glass-effect hover:bg-white/5 transition-all">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English" class="w-5 h-4">
+                            <span class="font-medium">EN</span>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle"
+                        class="menu-toggle glass-effect rounded-lg p-2 hover:bg-white/5 transition-all"
+                        aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu SIDEBAR -->
+    <div id="mobile-menu" class="md:hidden glass-effect h-full p-6">
+        <div class="flex flex-col space-y-6 mt-16">
+            <a href="#home"
+                class="text-lg hover:text-purple-300 transition-all py-3 px-4 rounded-lg hover:bg-white/5 flex items-center">
+                <i class="fas fa-home mr-3 w-6 text-center"></i>
+                <span class="lang-id">Beranda</span>
+                <span class="lang-en hidden">Home</span>
+            </a>
+            <a href="#about"
+                class="text-lg hover:text-purple-300 transition-all py-3 px-4 rounded-lg hover:bg-white/5 flex items-center">
+                <i class="fas fa-user mr-3 w-6 text-center"></i>
+                <span class="lang-id">Tentang</span>
+                <span class="lang-en hidden">About</span>
+            </a>
+            <a href="#skills"
+                class="text-lg hover:text-purple-300 transition-all py-3 px-4 rounded-lg hover:bg-white/5 flex items-center">
+                <i class="fas fa-code mr-3 w-6 text-center"></i>
+                <span class="lang-id">Keahlian</span>
+                <span class="lang-en hidden">Skills</span>
+            </a>
+            <a href="#certificates"
+                class="text-lg hover:text-purple-300 transition-all py-3 px-4 rounded-lg hover:bg-white/5 flex items-center">
+                <i class="fas fa-certificate mr-3 w-6 text-center"></i>
+                <span class="lang-id">Sertifikat</span>
+                <span class="lang-en hidden">Certificates</span>
+            </a>
+            <a href="#projects"
+                class="text-lg hover:text-purple-300 transition-all py-3 px-4 rounded-lg hover:bg-white/5 flex items-center">
+                <i class="fas fa-project-diagram mr-3 w-6 text-center"></i>
+                <span class="lang-id">Proyek</span>
+                <span class="lang-en hidden">Projects</span>
+            </a>
+
+            <div class="pt-4 border-t border-white/10">
+                <div class="flex space-x-3">
+                    <button id="lang-id-mobile"
+                        class="language-selector active flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg glass-effect hover:bg-white/5 transition-all flex-1">
+                        <img src="https://flagcdn.com/w20/id.png" alt="Indonesia" class="w-5 h-4">
+                        <span class="font-medium">ID</span>
+                    </button>
+                    <button id="lang-en-mobile"
+                        class="language-selector flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg glass-effect hover:bg-white/5 transition-all flex-1">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="English" class="w-5 h-4">
+                        <span class="font-medium">EN</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative overflow-hidden flex items-center">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-900/20 blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-900/20 blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full py-16 pt-28 md:pt-16">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 mb-16 lg:mb-0 lg:pr-12">
+                    <div class="inline-flex items-center glass-effect rounded-full px-4 py-2 mb-8">
+                        <span class="text-sm font-medium text-purple-300">
+                            <span class="lang-id">Pengembang Web & Desainer
+                                UI/UX</span>
+                            <span class="lang-en hidden">Web Developer &
+                                UI/UX Designer</span>
+                        </span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                        <span class="lang-id">Halo, saya</span>
+                        <span class="lang-en hidden">Hello, I'm</span>
+                        <br>
+                        <span class="gradient-text">Haris Darmawan</span>
+                    </h1>
+
+                    <p class="text-xl text-gray-300 mb-10 max-w-2xl">
+                        <span class="lang-id">Saya membuat pengalaman
+                            digital yang indah dan fungsional. Spesialis
+                            dalam pengembangan web modern, desain UI/UX, dan
+                            solusi teknologi inovatif.</span>
+                        <span class="lang-en hidden">I create beautiful and
+                            functional digital experiences. Specialized in
+                            modern web development, UI/UX design, and
+                            innovative technology solutions.</span>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects"
+                            class="gradient-bg px-8 py-4 rounded-xl font-semibold text-lg hover-scale inline-flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transition-shadow">
+                            <span class="lang-id">Lihat Proyek</span>
+                            <span class="lang-en hidden">View
+                                Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact"
+                            class="glass-effect px-8 py-4 rounded-xl font-semibold text-lg hover-scale inline-flex items-center justify-center space-x-3 border border-white/10 hover:border-white/20 transition-all">
+                            <i class="fas fa-envelope"></i>
+                            <span class="lang-id">Hubungi Saya</span>
+                            <span class="lang-en hidden">Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Profile Image -->
+                <div class="lg:w-1/2 flex justify-center lg:justify-end mt-16 lg:mt-0">
+                    <div class="relative">
+                        <!-- Cyberpunk Hologram -->
+                        <div class="relative w-80 h-80 md:w-96 md:h-96 group">
+                            <!-- CRT Monitor Effect -->
+                            <div
+                                class="absolute inset-0 rounded-xl bg-gradient-to-b from-gray-900 to-black 
+                                            border-4 border-gray-800 shadow-[0_0_40px_rgba(0,255,255,0.3)]
+                                            before:absolute before:inset-0 before:bg-[linear-gradient(rgba(0,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.1)_1px,transparent_1px)] before:bg-[size:20px_20px] before:opacity-20">
+
+                                <!-- Scan Lines -->
+                                <div
+                                    class="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,255,255,0.05)_2px,rgba(0,255,255,0.05)_4px)]">
+                                </div>
+
+                                <!-- Holographic Image -->
+                                <div class="relative w-full h-full p-4">
+                                    <div class="relative w-full h-full overflow-hidden rounded">
+                                        <img src="assets/img/1.jpeg" alt="Haris Darmawan" class="w-full h-full object-cover scale-140 origin-center 
+                                                       group-hover:scale-145 transition-transform duration-500
+                                                       contrast-125 brightness-110 saturate-110">
+
+                                        <!-- Hologram Color Overlay -->
+                                        <div class="absolute inset-0 bg-gradient-to-t from-cyan-500/20 via-transparent to-purple-500/20 
+                                                        mix-blend-overlay"></div>
+
+                                        <!-- Glitch Effect on Hover -->
+                                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent 
+                                                        opacity-0 group-hover:opacity-100 group-hover:animate-glitch">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Monitor Bezel -->
+                                <div class="absolute inset-0 rounded-xl border-2 border-cyan-500/30 
+                                                shadow-[inset_0_0_20px_rgba(0,255,255,0.2)]"></div>
+
+                                <!-- Power Indicator -->
+                                <div class="absolute bottom-3 right-3">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse 
+                                                        shadow-[0_0_10px_rgba(0,255,0,0.5)]"></div>
+                                        <span class="text-cyan-300 text-xs font-mono">ONLINE</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Data Stream Elements -->
+                            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-32 h-3 
+                                            bg-gradient-to-r from-transparent via-cyan-500 to-transparent 
+                                            blur-sm opacity-50"></div>
+
+                            <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-2 
+                                            bg-gradient-to-r from-transparent via-purple-500 to-transparent 
+                                            blur-sm opacity-50"></div>
+
+                            <!-- Binary Code Badge -->
+                            <div class="absolute top-4 left-4 bg-black/80 border border-cyan-500/50 px-3 py-1 rounded 
+                                            font-mono text-xs text-cyan-300 backdrop-blur-sm">
+                                101010
+                            </div>
+                        </div>
+
+                        <!-- Floating Data Nodes -->
+                        <div class="absolute -top-2 -left-2 w-6 h-6 bg-gradient-to-br from-cyan-500 to-purple-500 
+                                        rounded-full animate-float" style="animation-delay: 0s;"></div>
+                        <div class="absolute -bottom-2 -right-2 w-5 h-5 bg-gradient-to-br from-purple-500 to-cyan-500 
+                                        rounded-full animate-float" style="animation-delay: 1s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                    <span class="lang-id">Tentang</span>
+                    <span class="lang-en hidden">About</span>
+                    <span class="text-gradient">Saya</span>
+                </h2>
+                <div class="w-24 h-1 gradient-bg mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Column -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-6">
+                        <span class="lang-id">Full Stcak Developer</span>
+                        <span class="lang-en hidden">Creative Developer &
+                            Problem Solver</span>
+                    </h3>
+
+                    <p class="text-gray-300 text-lg mb-8">
+                        <span class="lang-id">Haris Darmawan adalah seorang Backend Developer dengan pengalaman lebih
+                            dari 2 tahun dalam membangun dan mengelola sistem web yang stabil dan terstruktur. Berfokus
+                            pada pengolahan data, logika aplikasi, serta pengelolaan database dengan memperhatikan
+                            performa dan keamanan sistem..</span>
+                        <span class="lang-en hidden">Haris Darmawan is a backend developer with over two years of
+                            experience building and managing stable and structured web systems. He focuses on data
+                            processing, application logic, and database management, with a focus on system performance
+                            and security.</span>
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">
+                                    <span class="lang-id">Pendidikan</span>
+                                    <span class="lang-en hidden">Education</span>
+                                </h4>
+                                <p class="text-gray-400">
+                                    <span class="lang-id">Sarjana Teknik
+                                        Informatika, Universitas
+                                        Pamulang</span>
+                                    <span class="lang-en hidden">Bachelor of
+                                        Computer Science, Pamulang
+                                        University</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-briefcase text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">
+                                    <span class="lang-id">Pengalaman</span>
+                                    <span class="lang-en hidden">Experience</span>
+                                </h4>
+                                <p class="text-gray-400">
+                                    <span class="lang-id">2+ Tahun sebagai
+                                        Pengembang Web Fullstack</span>
+                                    <span class="lang-en hidden">2+ Years as
+                                        Fullstack Web Developer</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Photo Section dengan desain baru -->
+                <div class="relative flex items-center justify-center h-full">
+                    <div class="w-full max-w-md">
+                        <!-- Container dengan efek layering -->
+                        <div class="relative group">
+                            <!-- Background Glow Effect -->
+                            <div class="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 
+                                            rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500">
+                            </div>
+
+                            <!-- Main Image Frame -->
+                            <div class="relative glass-effect rounded-2xl overflow-hidden 
+                                            border border-white/10 shadow-2xl h-80 transform 
+                                            transition-all duration-500 group-hover:scale-[1.02] 
+                                            group-hover:shadow-3xl">
+                                <!-- Profile Image -->
+                                <img src="assets/img/4.jpeg"
+                                    class="w-full h-full object-cover scale-110 origin-center group-hover:scale-115 transition-transform duration-700"
+                                    alt="Haris Darmawan - Profile Photo">
+
+                                <!-- Gradient Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent 
+                                                opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                </div>
+
+                                <!-- Info Overlay on Hover -->
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent 
+                                                transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <h4 class="text-white font-bold text-lg mb-1">Haris
+                                        Darmawan</h4>
+                                    <p class="text-gray-300 text-sm">Fullstack
+                                        Developer & UI/UX Designer</p>
+                                </div>
+                            </div>
+
+                            <!-- Corner Decorations -->
+                            <div class="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-purple-500/50 
+                                            rounded-tl-lg group-hover:border-purple-400 transition-all duration-300">
+                            </div>
+                            <div class="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-blue-500/50 
+                                            rounded-br-lg group-hover:border-blue-400 transition-all duration-300">
+                            </div>
+
+                            <!-- Floating Badges -->
+                            <div class="absolute -top-4 -right-4 glass-effect px-3 py-1 rounded-full 
+                                            text-xs font-bold backdrop-blur-sm border border-white/10">
+                                PRO
+                            </div>
+                            <div class="absolute -bottom-4 -left-4 glass-effect px-3 py-1 rounded-full 
+                                            text-xs backdrop-blur-sm border border-white/10">
+                                <i class="fas fa-check-circle text-green-400 mr-1"></i>
+                                <span class="text-white">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                    <span class="lang-id">Keahlian &</span>
+                    <span class="lang-en hidden">Skills &</span>
+                    <span class="text-gradient">Teknologi</span>
+                </h2>
+                <div class="w-24 h-1 gradient-bg mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <!-- Skill 1 -->
+                <div class="glass-effect rounded-2xl p-6 flex flex-col items-center hover-scale">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/10 border border-orange-500/20 flex items-center justify-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            class="w-10 h-10" alt="HTML5">
+                    </div>
+                    <span class="font-medium">HTML5</span>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="glass-effect rounded-2xl p-6 flex flex-col items-center hover-scale">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                            class="w-10 h-10" alt="CSS3">
+                    </div>
+                    <span class="font-medium">CSS3</span>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="glass-effect rounded-2xl p-6 flex flex-col items-center hover-scale">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-yellow-500/20 to-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            class="w-10 h-10" alt="JavaScript">
+                    </div>
+                    <span class="font-medium">JavaScript</span>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="glass-effect rounded-2xl p-6 flex flex-col items-center hover-scale">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/10 border border-blue-500/20 flex items-center justify-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                            class="w-10 h-10" alt="React">
+                    </div>
+                    <span class="font-medium">React</span>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="glass-effect rounded-2xl p-6 flex flex-col items-center hover-scale">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-teal-500/20 to-cyan-500/10 border border-teal-500/20 flex items-center justify-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+                            class="w-10 h-10" alt="Tailwind CSS">
+                    </div>
+                    <span class="font-medium">Tailwind</span>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="glass-effect rounded-2xl p-6 flex flex-col items-center hover-scale">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500/20 to-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                            class="w-10 h-10" alt="Node.js">
+                    </div>
+                    <span class="font-medium">Node.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                    <span class="lang-id">Sertifikat &</span>
+                    <span class="lang-en hidden">Certificates &</span>
+                    <span class="text-gradient">Kualifikasi</span>
+                </h2>
+                <div class="w-24 h-1 gradient-bg mx-auto"></div>
+            </div>
+
+            <div id="certificates-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certificate 1 -->
+                <div class="glass-effect rounded-2xl overflow-hidden hover-scale fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/sertiffikat/full.png" alt="Fullstack Web Developer Certificate"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-id">Pengembang Web
+                                Fullstack CBT</span>
+                            <span class="lang-en hidden">Fullstack Web
+                                Developer CBT</span>
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            <span class="lang-id">BWA • 2024</span>
+                            <span class="lang-en hidden">BWA •
+                                2024</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="glass-effect rounded-2xl overflow-hidden hover-scale fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/sertiffikat/fre.png" alt="UI/UX Design Certificate"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-id">Freelance Web Developer Market Place Produk Digital</span>
+                            <span class="lang-en hidden">Freelance Web Developer Digital Product Marketplace</span>
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            <span class="lang-id">BWA • 2024</span>
+                            <span class="lang-en hidden">BWA •
+                                2024</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="glass-effect rounded-2xl overflow-hidden hover-scale fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/sertiffikat/lg01.jpeg" alt="React Developer Certificate"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-id">(Pemrogramman Logic 101)</span>
+                            <span class="lang-en hidden">(Programming Logic 101)</span>
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            <span class="lang-id">Dicoding • 2022</span>
+                            <span class="lang-en hidden">Dicoding • 2022</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Hidden Certificates -->
+                <div id="hidden-certificates" class="hidden">
+                    <!-- Certificate 4 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden hover-scale certificate-hidden fade-in">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/sertiffikat/masteri.png" alt="JavaScript Certificate"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                <span class="lang-id">Web untuk menjual furnitur</span>
+                                <span class="lang-en hidden">Website to sell furniture</span>
+                            </h3>
+                            <p class="text-gray-400 mb-4">
+                                <span class="lang-id">BWA • 2024</span>
+                                <span class="lang-en hidden">BWA •
+                                    2024</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 5 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden hover-scale certificate-hidden fade-in">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/sertiffikat/websc.jpg" alt="Node.js Certificate"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                <span class="lang-id">Penguji & Pemburu Bug</span>
+                                <span class="lang-en hidden">Bug Bounty Hunter</span>
+                            </h3>
+                            <p class="text-gray-400 mb-4">
+                                <span class="lang-id">BWA •
+                                    2024</span>
+                                <span class="lang-en hidden">BWA •
+                                    2024</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 6 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden hover-scale certificate-hidden fade-in">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/sertiffikat/eth.jpeg" alt="Project Management Certificate"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                <span class="lang-id">Peretasan Etis</span>
+                                <span class="lang-en hidden">Ethical Hacking</span>
+                            </h3>
+                            <p class="text-gray-400 mb-4">
+                                <span class="lang-id">Great Learning •
+                                    2023</span>
+                                <span class="lang-en hidden">Great
+                                    Learning • 2023</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="load-more-container" class="text-center mt-12">
+                <button id="load-more-btn"
+                    class="glass-effect px-8 py-3 rounded-xl font-semibold text-lg hover-scale inline-flex items-center space-x-2 border border-white/10 hover:border-white/20 transition-all">
+                    <span class="lang-id">Lihat Semua Sertifikat</span>
+                    <span class="lang-en hidden">View All
+                        Certificates</span>
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                    <span class="lang-id">Proyek</span>
+                    <span class="lang-en hidden">Projects</span>
+                    <span class="text-gradient">Terbaru</span>
+                </h2>
+                <div class="w-24 h-1 gradient-bg mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-effect rounded-2xl overflow-hidden hover-scale">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/1.png" alt="E-commerce Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-id">Profile Perusahaan Adzkia Trans Mandiri</span>
+                            <span class="lang-en hidden">Adzkia Trans Mandiri Company Profile</span>
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            <span class="lang-id">Sistem penyewaan mobil Adzkia Transa Mandiri platform digital
+                                pengelolaan kendaraan</span>
+                            <span class="lang-en hidden">Adzkia Transa Mandiri car rental system, a digital vehicle
+                                management platform.</span>
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-900/50 text-purple-300 text-xs px-3 py-1 rounded-full">Laravel
+                                12</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Mysql</span>
+                            <span class="bg-green-900/50 text-green-300 text-xs px-3 py-1 rounded-full">Tailwind</span>
+                            <span class="bg-yellow-900/50 text-yellow-300 text-xs px-3 py-1 rounded-full">Figma</span>
+                        </div>
+                        <a href="https://adzkiatransmandiri.com/" target="_blank"
+                            class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                            <span class="lang-id">Lihat Detail</span>
+                            <span class="lang-en hidden">View Details</span>
+                            <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-effect rounded-2xl overflow-hidden hover-scale">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/at.png" alt="Analytics Dashboard" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-id">Profil Perusahaan Minyak Atsiri</span>
+                            <span class="lang-en hidden">Company Profile Minyak Atsirian</span>
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            <span class="lang-id">Website company profile Minyak Atsirian yang menampilkan produk minyak
+                                tradisional beserta informasi manfaatnya secara informatif dan profesional.</span>
+                            <span class="lang-en hidden">A company profile website for essential oils that showcases
+                                traditional oil products along with informative and professional information about their
+                                benefits.</span>
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-900/50 text-purple-300 text-xs px-3 py-1 rounded-full">Tailwind
+                                12</span>
+                            <span class="bg-pink-900/50 text-pink-300 text-xs px-3 py-1 rounded-full">Mysql</span>
+                            <span class="bg-red-900/50 text-red-300 text-xs px-3 py-1 rounded-full">Laravel</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">Figma</span>
+                        </div>
+                        <a href="https://hariisdermawan.github.io/Company-Profile-Minyak-Atsirian/" target="_blank"
+                            class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                            <span class="lang-id">Lihat Detail</span>
+                            <span class="lang-en hidden">View Details</span>
+                            <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-effect rounded-2xl overflow-hidden hover-scale">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/projects/5.png" alt="Mobile App" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-id">Profil Perusahaan NOMAD’s Travel</span>
+                            <span class="lang-en hidden">Company Profile NOMAD's Travel</span>
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            <span class="lang-id">Website travel yang menyajikan informasi destinasi, paket perjalanan,
+                                dan layanan wisata secara informatif dan profesional terbaik</span>
+                            <span class="lang-en hidden">A travel website that provides destination information, travel
+                                packages, and tourism services in the most informative and professional way</span>
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-3 py-1 rounded-full">React
+                                Native</span>
+                            <span
+                                class="bg-green-900/50 text-green-300 text-xs px-3 py-1 rounded-full">Express.js</span>
+                            <span
+                                class="bg-yellow-900/50 text-yellow-300 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                        </div>
+                        <a href="https://hariisdermawan.github.io/Travelin.io/" target="_blank"
+                            class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                            <span class="lang-id">Lihat Detail</span>
+                            <span class="lang-en hidden">View Details</span>
+                            <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-gray-950 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Logo dan Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center">
+                        <span class="text-xl font-bold">P</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Portfolio</h3>
+                        <p class="text-gray-400 text-sm">Haris Darmawan</p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="flex space-x-4">
+                    <a href="https://github.com/HariisDermawan" target="_blank"
+                        class="w-10 h-10 rounded-lg glass-effect flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hariisdermawan_/" target="_blank"
+                        class="w-10 h-10 rounded-lg glass-effect flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@siletchiper" target="_blank"
+                        class="w-10 h-10 rounded-lg glass-effect flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-gray-400 text-sm">
+                    <p>© 2026 Portfolio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
